@@ -1,4 +1,4 @@
-package com.maeen.fliife.pronotemobile;
+package com.maeen.fliife.school;
 
 import org.junit.Test;
 

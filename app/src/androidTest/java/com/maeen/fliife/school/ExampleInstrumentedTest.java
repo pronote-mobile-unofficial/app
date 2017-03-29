@@ -1,4 +1,4 @@
-package com.maeen.fliife.pronotemobile;
+package com.maeen.fliife.school;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.maeen.fliife.pronotemobile", appContext.getPackageName());
+        assertEquals("com.maeen.fliife.school", appContext.getPackageName());
     }
 }
