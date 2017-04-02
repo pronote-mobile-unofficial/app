@@ -22,16 +22,16 @@ before_script:
       echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter android-${ANDROID_COMPILE_SDK};
     fi
   - if [ ! -d "$SDK/platform-tools"]; then
-      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter platform-tools
+      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter platform-tools;
     fi
   - if [ ! -d "$SDK/build-tools/$ANDROID_BUILD_TOOLS"]; then
-      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS}
+      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS};
     fi
   - if [ ! -d "$SDK/extras/android/m2repository"]; then
-      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository
+      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository;
     fi
   - if [ ! -d "$SDK/extras/google/m2repository"]; then
-      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter extra-google-m2repository
+      echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter extra-google-m2repository;
     fi
   # Export variables for building
   - export ANDROID_HOME=$PWD/android-sdk-linux
