@@ -18,4 +18,4 @@ to the [gitlab repo](https://gitlab.com/pronote-mobile-unofficial/pronote-mobile
 
 ## License
 
-Everything in this repository is licensed under the [Mozilla Public License](LICENSE.MD)
+Everything in this repository is licensed under the [Mozilla Public License](https://gitlab.com/pronote-mobile-unofficial/pronote-mobile/blob/master/LICENSE.md)
