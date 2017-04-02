@@ -8,10 +8,10 @@ variables:
 before_script:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
-  # Download the tools only if they have not been downloaded yet
-  - [ ! -f android-sdk.zip ] && wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_TOOLS}-linux.zip
+  # Download tools only if they have not been downloaded yet
+  - if [ ! -f android-sdk.zip ]; then wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_TOOLS}-linux.zip; fi
   # Extract only if the file has never been exracted
-  - [ ! -d android-sdk-linux ] && unzip -qq android-sdk.zip -d android-sdk-linux
+  - if [ ! -d android-sdk-linux ]; then unzip -qq android-sdk.zip -d android-sdk-linux; fi
   # Update if updates are available
   - echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter android-${ANDROID_COMPILE_SDK}
   - echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter platform-tools
