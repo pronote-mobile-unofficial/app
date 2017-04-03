@@ -9,36 +9,16 @@ variables:
 before_script:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
-  # Download tools only if they have not been downloaded yet
-  - if [ ! -f android-sdk.zip ]; then
-      wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_TOOLS}-linux.zip;
-    fi
-  # Extract only if the file has never been exracted
-  - if [ ! -d android-sdk-linux ]; then
-      unzip -qq android-sdk.zip -d $SDK;
-    fi
-  # Install if not installed
-  - if [ ! -d "$SDK/platforms/android-$ANDROID_COMPILE_SDK" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter android-${ANDROID_COMPILE_SDK};
-    fi
-  - if [ ! -d "$SDK/platform-tools" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter platform-tools;
-    fi
-  - if [ ! -d "$SDK/build-tools/$ANDROID_BUILD_TOOLS" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS};
-    fi
-  - if [ ! -d "$SDK/extras/android/m2repository" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository;
-    fi
-  - if [ ! -d "$SDK/extras/google/google_play_services" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter extra-google-google_play_services;
-    fi
-  - if [ ! -d "$SDK/extras/google/m2repository" ]; then
-      echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter extra-google-m2repository;
-    fi
+  # Download tools
+  - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/tools_r${ANDROID_SDK_TOOLS}-linux.zip
+  # Extract SDK
+  - unzip -qq android-sdk.zip -d $SDK
+  - echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter android-${ANDROID_COMPILE_SDK}
+  - echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS}
+  - echo y | $SDK/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository
   # Export variables for building
-  - export ANDROID_HOME=$PWD/android-sdk-linux
-  - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+  - export ANDROID_HOME=$PWD/$SDK
+  - export PATH=$PATH:$PWD/$SDK/platform-tools/
   # Make gradlew executable
   - chmod +x ./gradlew
 
