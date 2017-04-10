@@ -1,7 +1,6 @@
 # Pronote Mobile App
 
 [![build status](https://gitlab.com/pronote-mobile-unofficial/pronote-mobile/badges/master/build.svg)](https://gitlab.com/pronote-mobile-unofficial/pronote-mobile/commits/master)
-[![Documentation Status](https://readthedocs.org/projects/pronote-mobile/badge/?version=latest)](http://pronote-mobile.readthedocs.io/en/latest/?badge=latest)
 
 This app's main goal is to create a link between Pronote, and your mobile
 phone, in a consistent and seamless manner.
