@@ -41,7 +41,10 @@ before_script:
   # Setup dependencies for documentation
   - curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
   - bash nodesource_setup.sh
-  - apt-get --quiet install --yes nodejs nodejs-legacy build-essential
+  - apt-get --quiet install --yes nodejs build-essential
+  - if [ ! -f "/usr/bin/node" ]; then
+      ln -s $(which nodejs) /usr/bin/node;
+    fi
   - npm install gitbook-cli -g
   - gitbook fetch latest
 
