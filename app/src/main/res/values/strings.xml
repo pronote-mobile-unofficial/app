@@ -8,4 +8,8 @@
     <string name="error_field_required">Ce champ est requis</string>
     <string name="check_your_infos">Veuillez vérifier vos informations de connexion</string>
     <string name="school">Établissement scolaire</string>
+
+    <!-- Related to profiles -->
+    <string name="profile_list">Liste des profils</string>
+    <string name="create_profile">Créer un profil</string>
 </resources>

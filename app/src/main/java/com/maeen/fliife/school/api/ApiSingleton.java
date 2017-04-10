@@ -9,7 +9,8 @@ import com.android.volley.toolbox.Volley;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by fliife on 29/03/17.
+ * @author fliife
+ * @since 29/03/17
  */
 public class ApiSingleton {
     private static ApiSingleton mInstance;
@@ -38,7 +39,7 @@ public class ApiSingleton {
     }
 
     public <T> void addToRequestQueue(Request<T> req) {
-        //Disable caching. The api, by its nature is subject to potential change on each request.
+        //Disable caching, since the data will change on each request
         req.setShouldCache(false);
         req.setRetryPolicy(new DefaultRetryPolicy((int) TimeUnit.SECONDS.toMillis(45), 0,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
