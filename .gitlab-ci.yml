@@ -6,6 +6,12 @@ variables:
   ANDROID_SDK_TOOLS: "25.2.5"
   SDK: "android-sdk-linux"
 
+cache:
+  paths:
+    - android-sdk-linux/
+    - android-sdk.zip
+    - node_modules/
+
 before_script:
   - apt-get --quiet update --yes
   - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
@@ -21,6 +27,12 @@ before_script:
   - export PATH=$PATH:$PWD/$SDK/platform-tools/
   # Make gradlew executable
   - chmod +x ./gradlew
+  # Setup dependencies for documentation
+  - curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+  - bash nodesource_setup.sh
+  - apt-get --quite install --yes nodejs nodejs-legacy build-essential
+  - npm install gitbook-cli -g
+  - gitbook fetch latest
 
 stages:
   - build
@@ -38,3 +50,13 @@ unitTests:
   stage: test
   script:
     - ./gradlew test
+
+pages:
+  stage: deploy
+  script:
+    - gitbook build docs public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
