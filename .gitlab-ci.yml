@@ -49,9 +49,9 @@ before_script:
   - gitbook fetch latest
 
 stages:
+  - doc
   - build
   - test
-  - deploy
 
 build:
   stage: build
@@ -67,7 +67,7 @@ unitTests:
     - ./gradlew test
 
 pages:
-  stage: deploy
+  stage: doc
   script:
     - gitbook build docs public
   artifacts:
