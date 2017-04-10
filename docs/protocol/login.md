@@ -37,8 +37,16 @@ In case where the user exists, it returns a challenge :
 
 If the user doesn't exists, the `donnees` object is empty.
 
-## Authentication
+## Authentification
 
-First, the challenge is decrypted in AES where :
-- iv = `.ivAESTemp` seen at [At Page Loading](#at-page-loading)
-- key = username + password (in plain text)
+Then, it decrypt with :
+- iv = the init vector used to crypt the UUID : `.ivAESTemp` seen at [Page Loading](#on-page-loading)
+- cle = if there are no CAS (cf. [CAS](#what-is-cas)), it's the password. *Else*, it's username+password
+- alea = true *(salt)*
+
+It finally returns 
+
+### What is CAS ?
+
+CAS means "Central Authentication Service". It makes possible that if the school has an ENT (Espace Numérique de Travail
+= something that harmonize multiples apps for a student), PRONOTE authorize connections from the ENT without login.

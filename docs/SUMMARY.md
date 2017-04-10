@@ -8,4 +8,3 @@
     - [Login Process](protocol/login.md)
         * [Identification](protocol/login.md#Identification)
         * [Authentication](protocol/login.md#Authentication)
-
