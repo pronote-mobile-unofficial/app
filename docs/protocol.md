@@ -60,8 +60,13 @@ Every request needs the header: `"Content-Type": 'application/json'` and data sh
 
 On every page loading, the client gives an id to the server : an *uuid*. It's generated with this method
 ```javascript
-GCryptage.cryptageRSA.encrypter(new forge.util.ByteBuffer(forge.random.generate(16)));
+GCryptage.cryptageRSA.encrypter(GApplication.getCommunication().ivAESTemp);
 ```
+where `.ivAESTemp` equals to:
+```javascript
+new forge.util.ByteBuffer(forge.random.generate(16));
+```
+
 And the request looks like (*POST*) :
 ```json
 {
@@ -115,4 +120,10 @@ In case where the user exists, it returns a challenge :
 }
 ```
 
-If the user doesn't exists, the do
+If the user doesn't exists, the `donnees` object is empty.
+
+### Login.Authentification
+
+First, the challenge is decrypted in AES where :
+- iv = `.ivAESTemp` seen at [At Page Loading](#at-page-loading)
+- key = username + password (in plain text)
