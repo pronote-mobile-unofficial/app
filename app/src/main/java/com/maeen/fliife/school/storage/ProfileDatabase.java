@@ -1,4 +1,4 @@
-package com.maeen.fliife.school.profiles;
+package com.maeen.fliife.school.storage;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

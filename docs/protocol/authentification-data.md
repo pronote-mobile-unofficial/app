@@ -35,7 +35,7 @@ Supposing that we're in `donneesSec.donnees`
     + String:V - Link
     + Integer:_T (23) - Type ?
 - Object:UrlParamClient - Contains the pronote's client settings (autoconfiguration mode)
-    + String:V ("ParamClient.pcprn") - See [Pronote Client Autoconfiguration](#pronote's-client-autoconfiguration)
+    + String:V ("ParamClient.pcprn") - See Pronote's client autoconfiguration
     + Integer:_T (23) - Type ?
 - Boolean:autorisationCloud (true) - Authorize importating files from Dropbox, etc...
 - Boolean:autorisationIManuel (true) - ?
