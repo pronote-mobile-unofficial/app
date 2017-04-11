@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PronoteMobile.iml" filepath="$PROJECT_DIR$/PronoteMobile.iml" />
+      <module fileurl="file://C:\Users\Marwan\floobits\share\FliiFe\maeen-fliife-school\PronoteMobile.iml" filepath="C:\Users\Marwan\floobits\share\FliiFe\maeen-fliife-school\PronoteMobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/maeen-fliife-school.iml" filepath="$PROJECT_DIR$/.idea/modules/maeen-fliife-school.iml" />
     </modules>
   </component>
 </project>

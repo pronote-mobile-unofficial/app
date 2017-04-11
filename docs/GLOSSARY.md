@@ -12,7 +12,7 @@ from the ENT without credential if the school has an [ENT](#ent).
 
 ## ENT
 
-An ENT, *Éspace Numérique de Travail*, is a set of tools available to students,
+An ENT, *Espace Numérique de Travail*, is a set of tools available to students,
 which pronote may be a part of.
 
 ## jQuery
@@ -37,3 +37,13 @@ Init Vector. This is a component used in AES-CBC encryption/decryption.
 Pronote uses a subset of AES encryption, which is AES-CBC.
 AES-CBC not only requires a key, but also requires an init
 vector. (see *[iv](#iv)*)
+
+## CAS
+
+CAS means "Central Authentication Service". It makes possible that if the school has an ENT (Espace Numérique de Travail
+= something that harmonize multiples apps for a student), PRONOTE authorize connections from the ENT without login.
+
+## Salt
+
+Salt ("*Aléa*" in the Pronote.NET code) works simply :
+It adds a random char between 
