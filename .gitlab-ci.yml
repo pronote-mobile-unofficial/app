@@ -38,9 +38,9 @@ before_script:
   - gitbook fetch latest
 
 stages:
+  - doc
   - build
   - test
-  - doc
 
 build:
   stage: build
