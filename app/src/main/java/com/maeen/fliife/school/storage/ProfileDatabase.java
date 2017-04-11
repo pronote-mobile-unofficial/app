@@ -1,4 +1,4 @@
-package com.maeen.fliife.school.storage;
+package com.maeen.fliife.school.profiles;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,11 +19,18 @@ public class ProfileDatabase extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("");
+        db.execSQL("CREATE TABLE profiles (" +
+                "username VARCHAR(100)" +
+                "password VARCHAR(100)" +
+                "url VARCHAR(200) )");
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }
+
