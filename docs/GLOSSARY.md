@@ -46,4 +46,36 @@ CAS means "Central Authentication Service". It makes possible that if the school
 ## Salt
 
 Salt ("*Aléa*" in the Pronote.NET code) works simply :
-It adds a random char between 
+It adds a random char between each char (including _space_) :
+
+**Example:**
+> Base string = "Hello Dear Friend";
+>
+> Result = "D**H**d**e**a**l**C**l**u**o**R 0**D**s**e**w**a**P**r**D Z**F**A**r**W**i**r**e**R**n**w**d**"
+
+## _T and V
+
+**_T** stands for _type_ and __V__ for _value_.
+
+## Pronote's client autoconfiguration
+
+You can get the client autoconfiguration file, available at :
+
+```{host}/pronote/ParamClient.pcprn```
+
+This file is encoded in UTF-8 and contains only one line:
+
+```Serveur={host_prefix}:{host_prefix}.index-education.net:49300```
+
+If you try to connect to it using the HTTP protocol and that port, you receive an error :
+
+```
+This page don't works
+{host} sent an incorrect response.
+
+ERR_INVALID_HTTP_RESPONSE
+```
+
+So, we receive a response, but with an another protocol.
+
+This definetely needs more research.

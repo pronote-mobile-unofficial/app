@@ -1,10 +1,14 @@
 # On page loading
 
-On every page loading, the client gives an id to the server : an *uuid*. It's generated with this method
+On every page loading, the client gives an id to the server : an *uuid*.
+It's generated with this method:
+
 ```javascript
 GCryptage.cryptageRSA.encrypter(GApplication.getCommunication().ivAESTemp);
 ```
-where `.ivAESTemp` equals to:
+
+where `.ivAESTemp` equals:
+
 ```javascript
 new forge.util.ByteBuffer(forge.random.generate(16));
 ```
