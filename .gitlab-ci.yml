@@ -36,6 +36,7 @@ before_script:
   - chmod +x ./gradlew
   # Setup dependencies for documentation
   - gitbook fetch latest
+  - gitbook install
 
 stages:
   - doc
