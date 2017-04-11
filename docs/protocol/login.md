@@ -47,7 +47,7 @@ probably in order to clear the login attempt out of memory.
 Then, it decrypt with :
 - iv = the init vector used to crypt the UUID : `.ivAESTemp` seen at [Page Loading](onload.md)
 - cle = if there are no CAS, it's the password. *Else*, it's username+password
-- alea = true *([Salt](#Salt))*
+- alea = true *Salt*
 
 And recrypt it.
 
