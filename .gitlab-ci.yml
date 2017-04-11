@@ -36,7 +36,6 @@ before_script:
   # Make gradlew executable
   - chmod +x ./gradlew
   # Setup dependencies for documentation
-  - gitbook fetch latest
   - cd docs
   - gitbook install
   - cd ..
