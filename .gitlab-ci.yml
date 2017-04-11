@@ -9,6 +9,7 @@ cache:
     - android-sdk-linux/
     - android-sdk.zip
     - node_modules/
+    - docs/node_modules/
 
 before_script:
   # Download tools only if they have not been downloaded yet
@@ -36,7 +37,9 @@ before_script:
   - chmod +x ./gradlew
   # Setup dependencies for documentation
   - gitbook fetch latest
+  - cd docs
   - gitbook install
+  - cd ..
 
 stages:
   - doc
