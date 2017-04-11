@@ -5,6 +5,15 @@ There are two Pronote clients: Client Pronote, and PRONOTE.NET.
 We base our researches on PRONOTE.NET, which is the web-based client, even if
 we found interesting things about that.
 
+## CAS
+
+CAS means *«Central Authentication Service»*. It allow PRONOTE login
+from the ENT without credential if the school has an [ENT](#ent).
+
+## ENT
+
+An ENT, *Éspace Numérique de Travail*, is a set of tools available to students,
+which pronote may be a part of.
 
 ## jQuery
 > jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
