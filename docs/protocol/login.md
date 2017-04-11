@@ -96,4 +96,4 @@ Otherwise, it gives an huge object of all data.
     }
 }
 ```
-See [Authentification Data](authentification-data.md) for fully detailed response.
+See [Authentification Data](authentication-data.md) for fully detailed response.

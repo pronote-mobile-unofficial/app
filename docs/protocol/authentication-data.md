@@ -1,4 +1,4 @@
-# Authentification Data
+# Authentication Data
 
 This is composed in multiple parts :
 - [Common data](#common-data)
