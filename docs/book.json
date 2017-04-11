@@ -1,10 +1,4 @@
 {
-  "plugins": [
-    "gitlab"
-  ],
-  "pluginsConfig": {
-    "gitlab": {
-      "url": "https://gitlab.com/pronote-mobile-unofficial/pronote-mobile/"
-    }
-  }
+  "plugins": [ ],
+  "pluginsConfig": { }
 }
