@@ -6,5 +6,5 @@
     - [Requests: How ? Where ? When ?](protocol/requests.md)
     - [On page loading](protocol/onload.md)
     - [Login Process](protocol/login.md)
-        * [Identification](protocol/login.md#Identification)
-        * [Authentication](protocol/login.md#Authentication)
+        * [Identification](protocol/login.md#identification)
+        * [Authentication](protocol/login.md#authentication)

@@ -1,25 +1,29 @@
 ## PRONOTE.NET
 
-There are two Pronote's client: Client Pronote, and PRONOTE.NET.
+There are two Pronote clients: Client Pronote, and PRONOTE.NET.
 
 We base our researches on PRONOTE.NET, which is the web-based client, even if
 we found interesting things about that.
 
 
-## Libraries used
-All librairies used can be found in {space}_ext.js
+## jQuery
+> jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
 
-### forge
+See [jQuery's website](https://jquery.com).
+
+## forge
 Forge is an encryption library used by the PRONOTE.NET client.
 Please see [here](https://github.com/digitalbazaar/forge) for more informations.
 
-### pako
+## pako
+> This project was done to understand how fast JS can be and is it necessary to develop native C modules for CPU-intensive tasks. Enjoy the result!
 
-## Encryption related
-### iv
+See [Pako's Github](https://github.com/nodeca/pako).
+
+## iv
 Init Vector. This is a component used in AES-CBC encryption/decryption.
 
-### AES-CBC
+## AES-CBC
 
 Pronote uses a subset of AES encryption, which is AES-CBC.
 AES-CBC not only requires a key, but also requires an init
