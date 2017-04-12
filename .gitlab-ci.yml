@@ -1,8 +1,11 @@
 variables:
-  ANDROID_COMPILE_SDK: "25"
-  ANDROID_BUILD_TOOLS: "25.0.2"
-  ANDROID_SDK_TOOLS: "25.2.5"
-  SDK: "android-sdk-linux"
+  ANDROID_COMPILE_SDK: '25'
+  ANDROID_BUILD_TOOLS: '25.0.2'
+  ANDROID_SDK_TOOLS: '25.2.5'
+  SDK: 'android-sdk-linux'
+  # Git settings
+  # fetch is faster than clone
+  GIT_STRATEGY: 'fetch'
 
 cache:
   paths:
@@ -42,11 +45,17 @@ before_script:
 
 stages:
   - doc
-  - build
-  - test
+  - gradle
+  - deploy
 
 build:
-  stage: build
+  stage: gradle
+  allow_failure: true
+  # Do not download any artifacts
+  dependencies: []
+  # Do not execute if the branch name contains the word 'doc'
+  except:
+    - /doc/
   script:
     - ./gradlew assembleDebug
   artifacts:
@@ -54,12 +63,22 @@ build:
     - app/build/outputs/
 
 unitTests:
-  stage: test
+  stage: gradle
+  # Do not download any artifacts
+  dependencies: []
+  # Do not execute if the branch name contains the word 'doc'
+  except:
+    - /doc/
   script:
     - ./gradlew test
 
 pages:
   stage: doc
+  # Do not download any artifacts
+  dependencies: []
+  # Only execute on branches containing the word 'doc'
+  only:
+    - /doc/
   script:
     - gitbook build docs public
   artifacts:
@@ -67,3 +86,24 @@ pages:
       - public
   only:
     - master
+
+deploy_app:
+  stage: deploy
+  only:
+    - branches
+  except:
+    - /doc/
+  environment:
+    name: app/$CI_COMMIT_REF_NAME
+  script:
+    - echo "Deploying application to app/$CI_COMMIT_REF_NAME"
+
+deploy_doc:
+  stage: deploy
+  only:
+    - branches
+    - /doc/
+  environment:
+    name: doc/$CI_COMMIT_REF_NAME
+  script:
+    - echo "Deploying doc to doc/$CI_COMMIT_REF_NAME"
