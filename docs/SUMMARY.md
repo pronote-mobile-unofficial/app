@@ -9,3 +9,4 @@
         * [Identification](protocol/login.md#identification)
         * [Authentication](protocol/login.md#authentication)
         * [Post-Login Data](protocol/authentication-data.md)
+            + [Authorizations](protocol/authorizations.md)

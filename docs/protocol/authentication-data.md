@@ -10,21 +10,20 @@ This is composed in multiple parts :
 
 - Type:Name (default content) - Description
     
-
 ## Common Data
 Supposing that we're in `donneesSec.donnees`
 
 - Boolean:autorisationKiosque (true) - ?
+- [Object-Authorizations](authorizations.md):autorisation - Authorizations
 
 ## Parents
 Supposing that we're in `donneesSec.donnees`
 
 - Object:EnvoiEmailEtablissement - Shows school emails.
-    + Boolean:AvecEnvoiEmailEtablissement
+    + Boolean:AvecEnvoiEmailEtablissement - Enables that feature
     + String:Secretariat - Secretariat's email
     + String:Webmaster - Webmaster's email
-
-![What it does](../img/envoi_email_etablissement.jpg)
+    + [Image](../img/envoi_email_etablissement.jpg)
 
 ## Students
 
