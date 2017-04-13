@@ -79,3 +79,10 @@ ERR_INVALID_HTTP_RESPONSE
 So, we receive a response, but with an another protocol.
 
 This definetely needs more research.
+
+## Range
+A range when serialized has the type attribute (T) equaling 8. In JSON, it's _T equaling 8.
+
+*Examples*:
+
+> [1..10] = [1,2,3,4,5,6,7,8,9,10]
